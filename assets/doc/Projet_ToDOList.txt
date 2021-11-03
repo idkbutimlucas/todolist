@@ -1,0 +1,29 @@
+
+- ToDoList
+
+		-> Todo list "traditionnelle" (genre trello)
+		
+####	-> Connexion
+		-> Ajout, modification, désactivation d'un utilisateur (accessible aux admins)
+		-> Liste de tâches, sous forme de tableau à 3 colonnes (todo, doing, done)
+		-> Créer une tâche
+		-> Etat d'une tâche (Todo, Doing, Done). Selon l'état de la tâche, elle sera mise dans la colonne correspondante
+		-> Ajout de commentaires
+		-> Affectation tâche personne
+		-> Gestion équipe (création d'équipe, ajout / suppression de membre)(accessible aux admins)
+		-> Affecter une tâche à une équipe
+		-> Filtrer l'affichage des tâches (mes tâches, tâche de X...)
+		
+
+1) Modéliser l'architecture applicative
+2) Créer la base de données, et les tables nécessaires
+3) Créer le projet PHP, le structurer (classes, logs, ...)
+4) Créer les classes nécessaires (utilisateur, tâche, commentaire, équipe, log, BDD etc...)
+5) Créer les attributs et les functions (que leur entête) nécessaires
+6) Implémenter chacune des classes
+6 bis) En parallèle développer le front
+
+
+Bien exporter le script SQL permettant de créer la BDD ainsi que les données nécessaires par défaut
+Réutiliser les classes (possibilité de les adapter) lors des précédent TP
+Prendre en compte les notions vues lors de chaque cours ( try catch, Cryptage, etc...) (et éventuellement les futures notins vues)
