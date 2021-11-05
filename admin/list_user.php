@@ -1,4 +1,5 @@
 <?php
+include '../autoload.php';
 require_once('..\classes\fonction.php');
 require('..\classes\rqt.php');
 ?>
@@ -26,17 +27,32 @@ require('..\classes\rqt.php');
     </div>
     <div class="content">
         <div class="user-goup">
-            <!-- show the meber list  -->
             <?php
-            while ($ligne = $resultat->fetch_assoc()) {
-                echo $ligne['username'] . ' ' . $ligne['user_type'] . ' ' . $ligne['email'];
+            $users = new UserManager();
+            $users = $users->getAll();
+
+            foreach ($users as $user) {
             ?>
-                <button onclick="location.href = 'modify_user.php';" name="modify_btn" type="submit" class="btn">Modify</button><br>
+                <form action="./modify_user.php" method="post">
+                    <p>
+                        <span class="<?= $user->status == '1' ? 'userActive' : 'userInactive' ?>"><?= $user->username ?></span>
+                        <small><?= $user->email ?></small>
+                    </p>
+                    <input type="hidden" name="userID" value="<?= $user->id ?>">
+                    <input type="submit" value="Modifier">
+                </form>
+
             <?php
             }
             ?>
+
         </div>
     </div>
+    <form class="center" method="post" action=".\home.php">
+        <div class="input-group">
+            <button type="submit" class="btn">Admin Home Page</button>
+        </div>
+    </form>
 </body>
 
 </html>

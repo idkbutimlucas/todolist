@@ -86,3 +86,20 @@ form, .content {
 	display: block;
 	clear: both;
 }
+
+.userActive:before, .userInactive:before {
+	content: ' ';
+	width: 10px;
+	height: 10px;
+	margin-right: 10px;
+	border-radius: 999px;
+	display: inline-block;
+}
+
+.userActive:before {
+	background-color: green;
+}
+
+.userInactive:before {
+	background-color: red;
+}
