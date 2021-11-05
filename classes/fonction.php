@@ -150,12 +150,20 @@ function login()
             if ($logged_in_user['user_type'] == 'admin') {
 
                 $_SESSION['user'] = $logged_in_user;
-                $_SESSION['success']  = "You are now logged in";
-                header('location: admin/home.php');
+                if ($logged_in_user['status'] == '1') {
+                    $_SESSION['success']  = "You are now logged in";
+                    header('location: admin/home.php');
+                } else {
+                    array_push($errors, "Your account is deactivated. Please contact an admin");
+                }
             } else {
                 $_SESSION['user'] = $logged_in_user;
-                $_SESSION['success']  = "You are now logged in";
-                header('location: index.php');
+                if ($logged_in_user['status'] == '1') {
+                    $_SESSION['success']  = "You are now logged in";
+                    header('location: index.php');
+                } else {
+                    array_push($errors, "Your account is deactivated. Please contact an admin");
+                }
             }
         } else {
             array_push($errors, "Wrong username/password combination");
@@ -183,3 +191,7 @@ function isActif()
         return false;
     }
 }
+
+// else{
+//     array_push($errors, "your account is deactivated. please contact an admin");
+// }
