@@ -4,8 +4,8 @@
 		-> Todo list "traditionnelle" (genre trello)
 		
 ####	-> Connexion
-		-> Ajout, modification, désactivation d'un utilisateur (accessible aux admins)
-		-> Liste de tâches, sous forme de tableau à 3 colonnes (todo, doing, done)
+	-> Ajout, modification, désactivation d'un utilisateur (accessible aux admins)
+	-> Liste de tâches, sous forme de tableau à 3 colonnes (todo, doing, done)
 		-> Créer une tâche
 		-> Etat d'une tâche (Todo, Doing, Done). Selon l'état de la tâche, elle sera mise dans la colonne correspondante
 		-> Ajout de commentaires
