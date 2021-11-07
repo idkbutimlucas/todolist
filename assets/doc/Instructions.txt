@@ -1,0 +1,12 @@
+db:
+	in : 
+		assets/db/mytodolist.sql
+	namedb:
+		mytodolist
+account:
+	admin:
+		username: admin
+		pswd:	  admin
+	user:
+		username: lucas
+		pswd:	  lucas
