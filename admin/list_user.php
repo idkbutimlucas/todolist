@@ -1,7 +1,5 @@
 <?php
 include '../autoload.php';
-require_once('..\classes\fonction.php');
-require('..\classes\rqt.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +13,7 @@ require('..\classes\rqt.php');
             background: #FF912A;
         }
 
-        button[name=modify_btn] {
+        button[name=admin-home-page_btn] {
             background: #FF912A;
         }
     </style>
@@ -50,7 +48,7 @@ require('..\classes\rqt.php');
     </div>
     <form class="center" method="post" action=".\home.php">
         <div class="input-group">
-            <button type="submit" class="btn">Admin Home Page</button>
+            <button type="submit" class="btn" name="admin-home-page_btn">Admin Home Page</button>
         </div>
     </form>
 </body>

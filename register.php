@@ -1,5 +1,15 @@
-<?php include('classes\fonction.php') ?>
+<?php
+include './autoload.php';
 
+if (isset($_POST['username'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password =  md5($_POST['password_1']);
+    $userManager = new UserManager();
+    $login = $userManager->register($username,$email,$password,'user',null, 1,true);
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,11 +27,11 @@
 
     <div class="input-group">
         <label>Username</label>
-        <input type="text" name="username" value="<?php echo $username; ?>">
+        <input type="text" name="username" >
     </div>
     <div class="input-group">
         <label>Email</label>
-        <input type="email" name="email" value="<?php echo $email; ?>">
+        <input type="email" name="email">
     </div>
     <div class="input-group">
         <label>Password</label>

@@ -7,11 +7,10 @@ body {
 	width: 60%;
 	margin: 50px auto 0px;
 	color: white;
-	background: #5F9EA0;
+	background: #ad45e9;
 	text-align: center;
 	border: 1px solid #B0C4DE;
 	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
 }
 form, .content {
@@ -20,7 +19,6 @@ form, .content {
 	padding: 20px;
 	border: 1px solid #B0C4DE;
 	background: white;
-	border-radius: 0px 0px 10px 10px;
 }
 .input-group {
 	margin: 10px 0px 10px 0px;
@@ -35,7 +33,6 @@ form, .content {
 	width: 93%;
 	padding: 5px 10px;
 	font-size: 16px;
-	border-radius: 5px;
 	border: 1px solid gray;
 }
 #user_type {
@@ -44,16 +41,14 @@ form, .content {
 	padding: 5px 10px;
 	background: white;
 	font-size: 16px;
-	border-radius: 5px;
 	border: 1px solid gray;
 }
 .btn {
 	padding: 10px;
 	font-size: 15px;
 	color: white;
-	background: #5F9EA0;
+	background: #ad45e9;
 	border: none;
-	border-radius: 5px;
 }
 .error {
 	width: 92%; 
@@ -62,7 +57,6 @@ form, .content {
 	border: 1px solid #a94442; 
 	color: #a94442; 
 	background: #f2dede; 
-	border-radius: 5px; 
 	text-align: left;
 }
 .success {

@@ -1,81 +1,106 @@
 * {
     box-sizing: border-box;
-  }
-  body {
-    color: white;
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+body {
+    font-family: "Lato", sans-serif;
     font-weight: 300;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }
-  ul {
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  .drag-container {
+}
+
+.drag-container {
     max-width: 1000px;
     margin: 20px auto;
-  }
-  .drag-list {
+}
+
+.drag-list {
     display: flex;
     align-items: flex-start;
-  }
-  @media (max-width: 690px) {
+    color: white;
+}
+
+@media (max-width: 690px) {
     .drag-list {
-      display: block;
+        display: block;
     }
-  }
-  .drag-column {
+}
+
+.drag-column {
     flex: 1;
     margin: 0 10px;
     position: relative;
     background: rgba(0, 0, 0, 0.2);
     overflow: hidden;
-  }
-  @media (max-width: 690px) {
+}
+
+@media (max-width: 690px) {
     .drag-column {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
     }
-  }
-  .drag-column h2 {
+}
+
+.drag-column h2 {
     font-size: 0.8rem;
     margin: 0;
     text-transform: uppercase;
     font-weight: 600;
-  }
-  .drag-column-on-hold .drag-column-header, .drag-column-on-hold .is-moved, .drag-column-on-hold .drag-options {
+}
+
+.drag-column-on-hold .drag-column-header, .drag-column-on-hold .is-moved, .drag-column-on-hold .drag-options {
     background: #fb7d44;
-  }
-  .drag-column-in-progress .drag-column-header, .drag-column-in-progress .is-moved, .drag-column-in-progress .drag-options {
+}
+
+.drag-column-in-progress .drag-column-header, .drag-column-in-progress .is-moved, .drag-column-in-progress .drag-options {
     background: #2a92bf;
-  }
-  .drag-column-approved .drag-column-header, .drag-column-approved .is-moved, .drag-column-approved .drag-options {
+}
+
+.drag-column-approved .drag-column-header, .drag-column-approved .is-moved, .drag-column-approved .drag-options {
     background: #00b961;
-  }
-  .drag-column-header {
+}
+
+.drag-column-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-  }
-  .drag-inner-list {
+}
+
+.drag-inner-list {
     min-height: 50px;
-  }
-  .drag-item {
+}
+
+.drag-item {
+    padding: 10px 20px;
     margin: 10px;
     height: 100px;
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .drag-item.is-moving {
+}
+
+.drag-item:hover {
+    cursor: pointer;
+}
+
+.drag-item.is-moving {
     transform: scale(1.5);
     background: rgba(0, 0, 0, 0.8);
-  }
-  .drag-header-more {
+}
+
+.drag-header-more {
     cursor: pointer;
-  }
-  .drag-options {
+}
+
+.drag-options {
     position: absolute;
     top: 44px;
     left: 0;
@@ -85,58 +110,199 @@
     transform: translateX(100%);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .drag-options.active {
+}
+
+.drag-options.active {
     transform: translateX(0);
     opacity: 1;
-  }
-  .drag-options-label {
+}
+
+.drag-options-label {
     display: block;
     margin: 0 0 5px 0;
-  }
-  .drag-options-label input {
+}
+
+.drag-options-label input {
     opacity: 0.6;
-  }
-  .drag-options-label span {
+}
+
+.drag-options-label span {
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 400;
     margin-left: 5px;
-  }
-  /* Dragula CSS  */
-  .gu-mirror {
+}
+
+/* Dragula CSS  */
+.gu-mirror {
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
     opacity: 0.8;
     list-style-type: none;
-  }
-  .gu-hide {
+}
+
+.gu-hide {
     display: none !important;
-  }
-  .gu-unselectable {
+}
+
+.gu-unselectable {
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-  }
-  .gu-transit {
+}
+
+.gu-transit {
     opacity: 0.2;
-  }
-  /* Demo info */
-  .section {
+}
+
+/* Demo info */
+.section {
     padding: 20px;
     text-align: center;
-  }
-  .section a {
+}
+
+.section a {
     color: white;
     text-decoration: none;
     font-weight: 300;
-  }
-  .section h4 {
+}
+
+.section h4 {
     font-weight: 400;
-  }
-  .section h4 a {
+}
+
+.section h4 a {
     font-weight: 600;
-  }
-  
+}
+
+
+/**
+ * Pop in
+ */
+
+.layer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s all ease-in-out;
+}
+
+.popin, .popin-comment {
+    color: black;
+    position: fixed;
+    width: 100%;
+    height: max-content;
+    max-width: 400px;
+    max-height: 90vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: white;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s all ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 30px 60px;
+}
+
+.popin form, .popin-comment form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.popin form label, .popin-comment form label {
+    margin: 10px 0;
+}
+
+.popin form input, .popin form textarea, .popin form select,
+.popin-comment form input, .popin-comment form textarea, .popin-comment form select {
+    border: none;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+}
+
+.popin form textarea,
+.popin-comment form textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 200px;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+.popin form input[type = 'submit'],
+.popin-comment form input[type = 'submit'] {
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    transition: 0.2s all ease-in-out;
+}
+
+.popin form input[type = 'submit']:hover,
+.popin-comment form input[type = 'submit']:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.popin .popin-toggle, .popin-comment .popin-comment-toggle {
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 2px solid black;
+    text-align: center;
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transition: 0.2s all ease-in-out;
+}
+
+.popin .popin-toggle:hover, .popin-comment .popin-comment-toggle:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.layer.active, .popin.active, .popin-comment.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popin.active, .popin-comment.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.comments-area {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.comments-area p {
+    font-size: 14px;
+    padding: 3px 5px;
+}
+
+.comments-area p:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+

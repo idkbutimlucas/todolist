@@ -1,7 +1,16 @@
-<?php include('classes\fonction.php') ?>
-<!DOCTYPE html>
-<html>
+<?php
+include './autoload.php';
 
+if (isset($_POST['username'])){
+    $username = $_POST['username'];
+    $password =  md5($_POST['password']);
+    $userManager = new UserManager();
+    $login = $userManager->login($username,$password);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <title>ToDoList | Login</title>
     <link rel="stylesheet" type="text/css" href="assets\css\resgister.css">

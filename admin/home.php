@@ -1,5 +1,5 @@
 <?php
-include('..\classes\fonction.php');
+include('..\autoload.php');
 
 if (!isAdmin()) {
     $_SESSION['msg'] = "You must log in first";
@@ -35,27 +35,27 @@ if (isset($_GET['logout'])) {
     </div>
     <div class="content">
         <!-- notification message -->
-        <?php if (isset($_SESSION['success'])) : ?>
+        <?php /*if (isset($_SESSION['success'])) : */?><!--
             <div class="error success">
                 <h3>
                     <?php
-                    echo $_SESSION['success'];
+/*                    echo $_SESSION['success'];
                     unset($_SESSION['success']);
-                    ?>
+                    */?>
                 </h3>
             </div>
-        <?php endif ?>
+        --><?php /*endif */?>
 
         <!-- logged in user information -->
         <div class="profile_info">
             <img src="../assets\img\user.png">
 
             <div>
-                <?php if (isset($_SESSION['user'])) : ?>
-                    <strong><?php echo $_SESSION['user']['username']; ?></strong>
+                <?php if (isLoggedIn()) : ?>
+                    <strong><?= getCurrentUsername() ?></strong>
 
                     <small>
-                        <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+                        <i style="color: #888;">(<?= getCurrentUserType() ?>)</i>
                         <br>
                         <a href="home.php?logout='1'" style="color: red;">logout</a>
                         &nbsp; <a href="..\index.php"> home page</a>

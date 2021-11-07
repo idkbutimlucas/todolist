@@ -1,7 +1,6 @@
 <?php
-include '../autoload.php';
-require('..\classes\fonction.php');
-require('..\classes\rqt.php'); ?>
+include '..\autoload.php';
+?>
 <?php
 $userID = $_POST['userID'];
 
@@ -25,7 +24,8 @@ $user = $userManager->get($userID);
             background: #FF912A;
         }
 
-        button[name=modify_btn] {
+        button[name=modify_btn],
+        button[name=liste-user_btn] {
             background: #FF912A;
         }
     </style>
@@ -61,12 +61,12 @@ $user = $userManager->get($userID);
             </select>
         </div>
         <div class="input-group">
-            <button type="submit" class="btn">Modify</button>
+            <button type="submit" class="btn" name="modify_btn">Modify</button>
         </div>
     </form>
     <form method="post" action=".\list_user.php">
         <div class="input-group">
-            <button type="submit" class="btn">Liste User</button>
+            <button type="submit" class="btn" name="liste-user_btn">Liste User</button>
         </div>
     </form>
 </body>
