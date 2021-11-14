@@ -76,7 +76,7 @@ class UserManager
         $req->bindValue(':id_team', $id_team);
         $req->execute();
 
-        if ($redirect == true){
+        if ($redirect == true) {
             $this->login($username, $password);
         }
 

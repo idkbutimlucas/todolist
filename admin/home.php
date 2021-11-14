@@ -34,18 +34,6 @@ if (isset($_GET['logout'])) {
         <h2>Admin - Home Page</h2>
     </div>
     <div class="content">
-        <!-- notification message -->
-        <?php /*if (isset($_SESSION['success'])) : */?><!--
-            <div class="error success">
-                <h3>
-                    <?php
-/*                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                    */?>
-                </h3>
-            </div>
-        --><?php /*endif */?>
-
         <!-- logged in user information -->
         <div class="profile_info">
             <img src="../assets\img\user.png">
@@ -60,7 +48,9 @@ if (isset($_GET['logout'])) {
                         <a href="home.php?logout='1'" style="color: red;">logout</a>
                         &nbsp; <a href="..\index.php"> home page</a>
                         &nbsp; <a href="create_user.php"> + add user</a>
+                        &nbsp; <a href="createTeam.php"> + add team</a>
                         &nbsp; <a href="list_user.php"> ~ edit user</a>
+                        &nbsp; <a href="listeTeam.php"> ~ edit team</a>
 
                     </small>
 
